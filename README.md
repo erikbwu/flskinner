@@ -5,7 +5,7 @@
 
 ### Download
 
-[Latest release](https://google.com)
+[Latest release](https://github.com/liquiad/flskinner/releases/latest/download/flskinner_x64_release.zip)
 
 ### What versions does this support?
 
