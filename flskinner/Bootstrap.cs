@@ -71,6 +71,17 @@ namespace flskinner
                 System.Environment.Exit(1);
             }
 
+            // some users have it in the 64 bit program files :shrug:
+            if (!File.Exists(string.Format(@"{0}\FL64.exe", Config.current.flStudioPath)))
+            {
+                var x64Path = @"C:\Program Files\Image-Line\FL Studio 20\FL64.exe";
+                if (File.Exists(x64Path))
+                {
+                    Config.current.flStudioPath = x64Path;
+                    Config.current.Save();
+                }
+            }
+
             if (!File.Exists(string.Format(@"{0}\FL64.exe", Config.current.flStudioPath)))
             {
                 CommonOpenFileDialog dialog = new CommonOpenFileDialog();
