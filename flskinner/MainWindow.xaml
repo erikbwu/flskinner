@@ -1,0 +1,44 @@
+﻿<Window x:Name="MainWindow1" x:Class="flskinner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:flskinner"
+        mc:Ignorable="d"
+        Title="flskinner" Height="460.503" Width="800" Icon="flskinner.ico"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" FontSize="20" WindowStyle="ThreeDBorderWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="LaunchFL" Content="Launch FL Studio" Margin="10,0,10,10" Height="28" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Click="LaunchFL_Click"/>
+        <Button x:Name="OpenSkinsFolder" Content="Open skins folder" Margin="10,0,10,43" Height="28" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Click="OpenSkinsFolder_Click"/>
+        <Label x:Name="SkinsLabel" Content="Skins" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.281,0.319" FontFamily="Roboto" FontWeight="Bold"/>
+        <ListBox x:Name="SkinsList" HorizontalAlignment="Left" Margin="10,39,0,76" Width="772" Grid.ColumnSpan="2" SelectionChanged="SkinsList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} by {1}">
+                                    <Binding Path="name" />
+                                    <Binding Path="author" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
