@@ -1,5 +1,5 @@
 # ![](https://i.imgur.com/3ivYF1X.png) 
-# flskinner
+# flskinner (My own copy - Credit: https://github.com/liquiad)
 
 ## A tool to apply basic skins to FL Studio 12+ ***without piracy or dll replacements***.
 
